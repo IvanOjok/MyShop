@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyShop</string>
+    <string name="my_jumper">Yellow Jumper</string>
+    <string name="price">UGX. 5000</string>
+</resources>
