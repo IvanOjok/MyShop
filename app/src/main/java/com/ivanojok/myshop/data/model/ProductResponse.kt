@@ -1,4 +1,4 @@
-package com.ivanojok.myshop.model
+package com.ivanojok.myshop.data.model
 
 data class ProductResponse(
     var id:Int?,
@@ -14,3 +14,5 @@ data class Rating(
     var rate:Double?,
     var count:Int?
 )
+
+

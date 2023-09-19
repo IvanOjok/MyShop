@@ -1,4 +1,4 @@
-package com.ivanojok.myshop.adapter
+package com.ivanojok.myshop.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.ivanojok.myshop.model.ProductResponse
+import com.ivanojok.myshop.data.model.ProductResponse
 import com.ivanojok.myshop.R
 import com.squareup.picasso.Picasso
 
@@ -35,5 +35,7 @@ class ProductAdapter(val context:Context, val list: List<ProductResponse>): Recy
         holder.name.text = list[position].title
         holder.price.text = "$${list[position].price}"
         holder.rating.rating = list[position].rating.rate?.toFloat() ?: 0.0f
+
+        val product = list[position]
     }
 }
