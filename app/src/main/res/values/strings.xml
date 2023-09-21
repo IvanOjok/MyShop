@@ -2,4 +2,6 @@
     <string name="app_name">MyShop</string>
     <string name="my_jumper">Yellow Jumper</string>
     <string name="price">UGX. 5000</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="product_name">Product Name</string>
 </resources>

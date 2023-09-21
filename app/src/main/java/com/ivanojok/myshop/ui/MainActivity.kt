@@ -1,12 +1,13 @@
-package com.ivanojok.myshop
+package com.ivanojok.myshop.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ivanojok.myshop.adapter.ProductAdapter
-import com.ivanojok.myshop.retofit.RetrofitInstance
+import com.ivanojok.myshop.R
+import com.ivanojok.myshop.data.adapter.ProductAdapter
+import com.ivanojok.myshop.data.retofit.RetrofitInstance
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

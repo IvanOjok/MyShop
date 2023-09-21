@@ -1,6 +1,6 @@
-package com.ivanojok.myshop.retofit
+package com.ivanojok.myshop.data.retofit
 
-import com.ivanojok.myshop.model.ProductResponse
+import com.ivanojok.myshop.data.model.ProductResponse
 import retrofit2.http.GET
 
 interface ProductService {

@@ -1,4 +1,4 @@
-package com.ivanojok.myshop.retofit
+package com.ivanojok.myshop.data.retofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
