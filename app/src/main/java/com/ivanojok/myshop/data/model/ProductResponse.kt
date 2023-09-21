@@ -1,5 +1,6 @@
 package com.ivanojok.myshop.data.model
 
+
 data class ProductResponse(
     var id:Int?,
     var title:String?,

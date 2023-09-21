@@ -1,4 +1,4 @@
-package com.ivanojok.myshop.data.adapter
+package com.ivanojok.myshop.ui.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -10,7 +10,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.ivanojok.myshop.DetailsActivity
+import com.ivanojok.myshop.ui.DetailsActivity
 import com.ivanojok.myshop.data.model.ProductResponse
 import com.ivanojok.myshop.R
 import com.squareup.picasso.Picasso
@@ -42,10 +42,16 @@ class ProductAdapter(val context:Context, val list: List<ProductResponse>): Recy
 
         holder.card.setOnClickListener {
             val intent = Intent(context, DetailsActivity::class.java)
-            intent.putExtra("productImage", list[position].image)
+            intent.putExtra("productId", list[position].id)
             intent.putExtra("productName", list[position].title)
-            intent.putExtra("productPrice", list[position].price)
+            intent.putExtra("productPrice", list[position].price.toString())
             intent.putExtra("productDescription", list[position].description)
+            intent.putExtra("productCategory", list[position].category)
+            intent.putExtra("productImage", list[position].image)
+            intent.putExtra("ratingRate", list[position].rating.rate.toString())
+            intent.putExtra("ratingCount", list[position].rating.count.toString())
+
+
             context.startActivity(intent)
         }
     }
