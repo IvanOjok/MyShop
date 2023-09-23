@@ -4,4 +4,7 @@
     <string name="price">UGX. 5000</string>
     <string name="add_to_cart">Add To Cart</string>
     <string name="product_name">Product Name</string>
+    <string name="my_shop">My Shop</string>
+    <string name="one">1</string>
+    <string name="check_out">Check Out</string>
 </resources>

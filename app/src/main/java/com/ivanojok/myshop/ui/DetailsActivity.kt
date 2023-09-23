@@ -1,5 +1,6 @@
 package com.ivanojok.myshop.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -50,6 +51,7 @@ class DetailsActivity : AppCompatActivity() {
                         productCategory, productImage, Rating(ratingRate?.toDouble(), ratingCount?.toInt()))
                 val item = CartModel(null, product, 1)
                 viewModel.insertCartItem(this, item)
+                startActivity(Intent(this, MainActivity::class.java))
             } catch (t: Throwable) {
                 Toast.makeText(this, "$t", Toast.LENGTH_SHORT).show()
 

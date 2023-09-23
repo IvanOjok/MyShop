@@ -34,4 +34,6 @@ class MainViewModel: ViewModel() {
             DBBuilder().initializeDB(context).createCartDao().insertProductToCart(item)
         }
     }
+
+
 }

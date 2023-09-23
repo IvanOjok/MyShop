@@ -1,7 +1,9 @@
 package com.ivanojok.myshop.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +23,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        findViewById<ImageView>(R.id.my_cart).setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
+        }
 
 
         CoroutineScope(Dispatchers.IO).launch {
