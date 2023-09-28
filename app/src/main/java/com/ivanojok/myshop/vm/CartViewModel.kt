@@ -3,20 +3,17 @@ package com.ivanojok.myshop.vm
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ivanojok.myshop.data.repository.MainRepository
 import com.ivanojok.myshop.data.room.CartModel
 import com.ivanojok.myshop.data.room.DBBuilder
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
-class CartViewModel : ViewModel() {
+class CartViewModel(val repository: MainRepository) : ViewModel() {
 
     suspend fun getCartList(context: Context): List<CartModel> {
-        val x = viewModelScope.async(Dispatchers.IO) {
-            val list = DBBuilder().initializeDB(context).createCartDao().selectAllProducts()
-            list
-        }
-        return x.await()
+        return repository.getCartList(context)
     }
 
     suspend fun addQuantity(context: Context, id:Int): Int {

@@ -28,24 +28,40 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CartActivity::class.java))
         }
 
-
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val items = viewModel.getRemoteItems()
-
-                withContext(Dispatchers.Main) {
+        viewModel.productListData.observe(this) {
+            when(it) {
+                is MainViewModel.CompleteResponse.Loading -> {
+                    //progressBar
+                }
+                is MainViewModel.CompleteResponse.Failure -> {
+                    //showError
+                }
+                is MainViewModel.CompleteResponse.Success -> {
                     val productView = findViewById<RecyclerView>(R.id.product_view)
-                    val productAdapter = ProductAdapter(this@MainActivity, items!!)
+                    val productAdapter = ProductAdapter(this@MainActivity, it.data)
                     productView.adapter = productAdapter
                     productView.layoutManager = LinearLayoutManager(this@MainActivity)
                 }
-            } catch (t: Throwable) {
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(this@MainActivity, "No internet Connection", Toast.LENGTH_LONG)
-                        .show()
-                }
             }
-
         }
+
+//        CoroutineScope(Dispatchers.IO).launch {
+//            try {
+//                val items = viewModel.getRemoteItems()
+//
+//                withContext(Dispatchers.Main) {
+//                    val productView = findViewById<RecyclerView>(R.id.product_view)
+//                    val productAdapter = ProductAdapter(this@MainActivity, items!!)
+//                    productView.adapter = productAdapter
+//                    productView.layoutManager = LinearLayoutManager(this@MainActivity)
+//                }
+//            } catch (t: Throwable) {
+//                withContext(Dispatchers.Main) {
+//                    Toast.makeText(this@MainActivity, "No internet Connection", Toast.LENGTH_LONG)
+//                        .show()
+//                }
+//            }
+//
+//        }
     }
 }
